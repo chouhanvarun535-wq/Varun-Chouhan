@@ -1,0 +1,48 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile, balance, and lifetime stats",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "avatarEmoji": { "type": "string" },
+        "coins": { "type": "integer" },
+        "totalCoinsEarned": { "type": "integer" },
+        "totalXp": { "type": "integer" },
+        "streakDays": { "type": "integer" },
+        "gamesWon": { "type": "integer" },
+        "gamesLost": { "type": "integer" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "userName", "coins", "totalXp", "createdAt"]
+    },
+    "MalaSession": {
+      "title": "MalaSession",
+      "description": "Mala Jaap bead chanting session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "mantraId": { "type": "string" },
+        "completedMalas": { "type": "integer" },
+        "totalChants": { "type": "integer" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "completedMalas", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "User profile and personal stats"
+    },
+    "/users/{userId}/mala_sessions/{sessionId}": {
+      "schema": { "$ref": "#/entities/MalaSession" },
+      "description": "Spiritual Mala Jaap chanting records"
+    }
+  }
+}

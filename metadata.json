@@ -1,0 +1,6 @@
+{
+  "name": "ApexLife",
+  "description": "Daily Life Engine with Student Studio, Business Suite, Athlete Telemetry, Looksmaxing, Subway Track Runner, Talking Tom Cat, Retro Block Stacker, Mala Jaap with vibration, Leaderboard, and Coin rewards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
